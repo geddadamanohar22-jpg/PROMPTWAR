@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Fresher to Senior – My Campus Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: #0f0f0f;
+    color:white;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+section{
+    padding:80px 10%;
+}
+
+h1{
+    font-size:3rem;
+    font-weight:800;
+}
+
+h2{
+    font-size:2rem;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+p{
+    margin-bottom:15px;
+    font-size:1.1rem;
+    color:#d1d1d1;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background: linear-gradient(135deg, #111, #1a1a1a);
+}
+
+.hero h1{
+    background: linear-gradient(to right,#ffd700,#ffffff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.3rem;
+}
+
+/* Sections */
+.section-dark{
+    background:#141414;
+}
+
+.section-light{
+    background:#1c1c1c;
+}
+
+/* Cards */
+.card{
+    background:#222;
+    padding:30px;
+    border-radius:15px;
+    margin-top:30px;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(255,215,0,0.2);
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:40px;
+    background:#000;
+    font-size:0.9rem;
+    color:#aaa;
+}
+
+/* Fade animation */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>From Fresher to Senior</h1>
+    <p>It was never just a degree. It was transformation.</p>
+</section>
+
+<!-- FRESHER -->
+<section class="section-dark fade">
+    <h2>🎒 Fresher Year – The Scared Beginning</h2>
+    <div class="card">
+        <p>First day. Heavy backpack. Heavier doubts.</p>
+        <p>New campus. New faces. New version of me.</p>
+        <p>I didn’t know the shortcuts between blocks. But I was searching for my path in life.</p>
+        <p>Silent in classrooms. Loud in overthinking.</p>
+        <p>Plot twist: I would grow.</p>
+    </div>
+</section>
+
+<!-- SECOND YEAR -->
+<section class="section-light fade">
+    <h2>💡 Second Year – The Awakening</h2>
+    <div class="card">
+        <p>Confusion turned into curiosity.</p>
+        <p>Late-night coding. Hackathons. Mini projects.</p>
+        <p>Group studies that became therapy sessions.</p>
+        <p>Skills upgraded. Confidence loading… ███████░░</p>
+        <p>Growth begins when comfort ends.</p>
+    </div>
+</section>
+
+<!-- THIRD YEAR -->
+<section class="section-dark fade">
+    <h2>🚀 Third Year – The Pressure Cooker</h2>
+    <div class="card">
+        <p>Major projects. Internship rejections.</p>
+        <p>“We regret to inform you…” became common.</p>
+        <p>Deadlines. Presentations. Sleepless nights.</p>
+        <p>This year didn’t break me. It built me.</p>
+        <p>Main character energy activated.</p>
+    </div>
+</section>
+
+<!-- FINAL YEAR -->
+<section class="section-light fade">
+    <h2>👑 Final Year – The Becoming</h2>
+    <div class="card">
+        <p>Somehow… I became the senior.</p>
+        <p>Juniors asking for advice.</p>
+        <p>Teachers trusting me with responsibility.</p>
+        <p>From backbench hesitation to front-stage confidence.</p>
+        <p>Character development: Complete.</p>
+    </div>
+</section>
+
+<!-- LESSONS -->
+<section class="section-dark fade">
+    <h2>📚 Lessons Learned</h2>
+    <div class="card">
+        <p>✔ Confidence is built daily.</p>
+        <p>✔ Rejections redirect you.</p>
+        <p>✔ Skills matter. Mindset matters more.</p>
+        <p>✔ Friends become family.</p>
+        <p>✔ Growth is uncomfortable — and worth it.</p>
+    </div>
+</section>
+
+<!-- CLOSING -->
+<section class="section-light fade">
+    <h2>🎓 The Real Degree</h2>
+    <div class="card">
+        <p>One day you enter with nervous steps.</p>
+        <p>One day you leave with identity.</p>
+        <p>Between Fresher and Senior…</p>
+        <p>You don’t just earn a degree.</p>
+        <h2>You discover yourself.</h2>
+    </div>
+</section>
+
+<footer>
+    Created with ❤️ | My Campus Story
+</footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+const appearOptions = {
+    threshold: 0.3
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting){
+            return;
+        } else {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+
+faders.forEach(fader=>{
+    appearOnScroll.observe(fader);
+});
+</script>
+
+</body>
+</html>
